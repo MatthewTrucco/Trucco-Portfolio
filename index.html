@@ -4,108 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UX/UI Showcase</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="#" class="logo">UX/UI Showcase</a>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">UX/UI Showcase</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
+
     <section id="home" class="hero">
-        <div class="hero-content">
+        <div class="hero-content text-center">
             <h1>Welcome to the UX/UI Showcase</h1>
             <p>Crafting Seamless Experiences</p>
-            <a href="#portfolio" class="btn">See My Work</a>
+            <a href="#portfolio" class="btn btn-primary">See My Work</a>
         </div>
     </section>
+
     <section id="about">
         <div class="container">
             <h2>About Me</h2>
-            <div class="about-content">
-                <img src="images/portrait.jpg" alt="Portrait">
-                <div class="about-text">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="images/portrait.jpg" alt="Portrait" class="img-fluid">
+                </div>
+                <div class="col-md-8">
                     <p>Hi, I'm Matt, a Full Stack Coder and UX/UI designer. 
                         I specialize in creating intuitive and engaging digital experiences. 
                         With a strong background in both front-end and back-end development, 
                         I strive to deliver seamless and efficient solutions for web and mobile applications.</p>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/matthew-trucco-15aa81157/" target="_blank">LinkedIn</a>
-                        <a href="Matthew_Trucco_Resume.pdf" target="_blank" download>Download Resume</a>
+                        <a href="https://www.linkedin.com/in/matthew-trucco-15aa81157/" target="_blank" class="btn btn-primary">LinkedIn</a>
+                        <a href="Matthew_Trucco_Resume.pdf" target="_blank" download class="btn btn-secondary">Download Resume</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <section id="portfolio">
         <div class="container">
             <h2>Portfolio</h2>
-            <div class="gallery">
-                <div class="gallery-item">
+            <div class="row">
+                <div class="col-md-6">
                     <a href="project1.html">
-                        <img src="images/image.png" alt="Project 1">
+                        <img src="images/image.png" alt="Project 1" class="img-fluid">
                         <p>CoHabit</p>
                     </a>
                 </div>
-                <div class="gallery-item">
+                <div class="col-md-6">
                     <a href="project2.html">
-                        <img src="images/image.png" alt="Project 2">
+                        <img src="images/image.png" alt="Project 2" class="img-fluid">
                         <p>Project 2</p>
                     </a>
                 </div>
             </div>
         </div>
     </section>
+
     <section id="testimonials">
         <div class="container">
             <h2>Testimonials</h2>
-            <div class="testimonials-content">
-                <div class="testimonial">
-                    <p>"Amazing work! Highly recommended."</p>
-                    <p class="author">- Client Name</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="testimonial">
+                        <p>"Amazing work! Highly recommended."</p>
+                        <p class="author">- Client Name</p>
+                    </div>
                 </div>
-                <div class="testimonial">
-                    <p>"Professional and creative."</p>
-                    <p class="author">- Another Client</p>
+                <div class="col-md-6">
+                    <div class="testimonial">
+                        <p>"Professional and creative."</p>
+                        <p class="author">- Another Client</p>
+                    </div>
                 </div>
-                <!-- More testimonials -->
             </div>
         </div>
     </section>
+
     <section id="contact">
         <div class="container">
             <h2>Contact</h2>
             <form action="#">
                 <div class="form-group">
-                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" class="form-control" placeholder="Your Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" placeholder="Your Email" required>
+                    <input type="email" class="form-control" placeholder="Your Email" required>
                 </div>
                 <div class="form-group">
-                    <textarea placeholder="Your Message" required></textarea>
+                    <textarea class="form-control" placeholder="Your Message" required></textarea>
                 </div>
-                <button type="submit">Send</button>
+                <button type="submit" class="btn btn-primary">Send</button>
             </form>
         </div>
     </section>
-    <footer>
+
+    <footer class="bg-light">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section about">
+            <div class="row">
+                <div class="col-md-4">
                     <h3>About</h3>
                     <p>A short description about the website or the company.</p>
                 </div>
-                <div class="footer-section links">
+                <div class="col-md-4">
                     <h3>Quick Links</h3>
-                    <ul>
+                    <ul class="list-unstyled">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
@@ -113,18 +129,23 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-section contact">
+                <div class="col-md-4">
                     <h3>Contact</h3>
                     <p>Email: mctrucco@gmail.com</p>
                     <p>Phone: (908) 875-7199</p>
                     <p>State: Basking, City, NJ</p>
                 </div>
             </div>
-            <div class="footer-bottom">
+            <div class="text-center py-3">
                 <p>&copy; 2024 Trucco. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
