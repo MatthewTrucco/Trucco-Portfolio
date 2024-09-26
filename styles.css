@@ -6,18 +6,25 @@ body {
     color: #333;
     line-height: 1.6;
     background: linear-gradient(270deg, #ff7e5f, #ff6b6b, #f7b42c, #ff3f5e, #ff7e5f);
-    background-size: 800% 800%; 
-    animation: moveGradient 120s ease infinite; 
-    min-height: 100vh; 
+    background-size: 800% 800%;
+    animation: moveGradient 120s ease infinite;
+    min-height: 100vh;
 }
 
 @keyframes moveGradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
+
 header {
-    background: rgba(255, 255, 255, 0.8); 
+    background: rgba(255, 255, 255, 0.8);
     padding: 20px 0;
     border-bottom: 1px solid #ccc;
 }
@@ -73,7 +80,7 @@ nav ul li a:hover {
 }
 
 .hero {
-    height: calc(100vh - 60px); 
+    height: calc(100vh - 60px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,17 +134,17 @@ section {
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.9); 
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
 .about-content {
     display: flex;
     align-items: center;
-    background: #fff; 
+    background: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -173,50 +180,72 @@ section {
     color: #e55a00;
 }
 
-/* Gallery Styles */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+/* Portfolio Carousel Specific Styles */
+#portfolio .carousel-item {
+    display: none; /* Hide all carousel items */
+    justify-content: space-between;
+    align-items: center;
 }
 
-.gallery-item {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s;
+#portfolio .carousel-item.active {
+    display: flex; /* Show active item */
+}
+
+#portfolio .carousel-item .col-md-3 {
+    padding: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+    align-items: center;
 }
 
-.gallery-item img {
+#portfolio .carousel-item img {
     width: 100%;
-    height: 300px;
+    height: 250px;
     object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
-.gallery-item p {
-    padding: 10px;
-    text-align: center;
-    background: #ff6600;
-    color: #fff;
-    margin: 0;
-}
-
-.gallery-item:hover {
+#portfolio .carousel-item img:hover {
     transform: scale(1.05);
 }
 
-.gallery-item a {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+#portfolio .carousel-item p {
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Carousel Controls Customization */
+.carousel-control-prev, .carousel-control-next {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 5%;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #ff6600;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.carousel-indicators li {
+    background-color: #ff6600;
+}
+
+/* Responsive Styles for Carousel */
+@media (max-width: 768px) {
+    #portfolio .carousel-item {
+        flex-direction: column;
+    }
+
+    #portfolio .carousel-item .col-md-3 {
+        width: 100%;
+    }
 }
 
 /* Testimonials Styles */
@@ -244,45 +273,14 @@ section {
     color: #ff6600;
 }
 
-/* Form Styles */
-form .form-group {
-    margin-bottom: 20px;
-}
-
-form .form-group input,
-form .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form button {
-    padding: 10px 20px;
-    background: #ff6600;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-form button:hover {
-    background: #e55a00;
-}
-
 /* Footer Styles */
 footer {
-    background: rgba(51, 51, 51, 0.9); 
+    background: rgba(51, 51, 51, 0.9);
     color: #000;
     padding: 40px 20px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 0 20px 20px; 
+    margin: 0 20px 20px;
 }
 
 .footer-content {
@@ -337,54 +335,6 @@ footer {
     border-top: 1px solid #444;
 }
 
-/* Project Content Styles */
-
-.project-content {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.project-content img {
-    max-width: 45%; /* Adjusted to occupy less space */
-    height: auto;
-    border-radius: 10px;
-    margin-right: 20px;
-}
-
-.project-details {
-    flex: 1;
-    color: #333;
-}
-
-.project-details h3 {
-    color: #ff6600;
-    margin-top: 20px;
-}
-
-.project-details ol {
-    padding-left: 20px;
-}
-
-.project-details ol li {
-    margin-bottom: 10px;
-}
-
-.project-details ul {
-    list-style-type: disc;
-    padding-left: 40px;
-}
-
-.project-details p {
-    margin-bottom: 20px;
-    line-height: 1.8;
-}
-
 /* Animations */
 @keyframes fadeInDown {
     from {
@@ -419,19 +369,26 @@ footer {
         margin: 0 0 20px 0;
     }
 
-    .project-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .project-details {
-        text-align: left;
-    }
-
     .footer-content {
         flex-direction: column;
         text-align: center;
     }
 }
 
+.portfolio-item {
+    text-align: center;
+    padding: 10px;
+}
 
+.portfolio-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.portfolio-title {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
